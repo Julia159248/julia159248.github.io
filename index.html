@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julistar Chemical | Chemical Raw Materials</title>
+<meta name="description" content="Specifications, packing, transport classification and documentation for caustic soda, KOH, SLES, LABSA, calcium hypochlorite, glutaraldehyde, MEA triazine and hydrogen peroxide.">
+<style>
+  :root{
+    --ink:#121a22; --ink-soft:#54606c; --ink-mute:#8a949e;
+    --line:#e3e8ed; --line-soft:#eef1f4;
+    --bg:#ffffff; --bg-soft:#f5f7f9; --bg-deep:#0d2137;
+    --brand:#0d3352; --brand-2:#1b5c85; --accent:#c2571f; --accent-soft:#fbf0e9;
+    --ok:#1a6b45; --warn:#a3500f;
+    --radius:6px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Inter","Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:var(--brand-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+  .topbar-in{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:22px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--brand)}
+  .brand .mark{width:32px;height:32px;border-radius:4px;background:var(--bg-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;letter-spacing:.02em}
+  .brand .txt strong{display:block;font-size:14px;letter-spacing:.06em;line-height:1.25}
+  .brand .txt span{display:block;font-size:11px;color:var(--ink-mute);letter-spacing:.08em;text-transform:uppercase}
+  .nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .nav a{padding:8px 12px;border-radius:5px;font-size:14px;color:var(--ink-soft);text-decoration:none;font-weight:500}
+  .nav a:hover{background:var(--bg-soft);color:var(--brand)}
+  .nav a.on{background:var(--bg-deep);color:#fff}
+
+  /* ---------- layout ---------- */
+  .shell{max-width:1180px;margin:0 auto;padding:0 24px 80px}
+  .hero{padding:54px 0 30px;border-bottom:1px solid var(--line-soft)}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:38px;line-height:1.22;letter-spacing:-.02em;margin:14px 0 12px;color:var(--brand);font-weight:800}
+  .lede{font-size:17px;color:var(--ink-soft);max-width:760px;margin:0}
+  .meta-row{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;font-size:13px;color:var(--ink-mute)}
+  .meta-row b{color:var(--brand);font-weight:700}
+
+  /* ---------- search ---------- */
+  .tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:26px 0 6px}
+  .search{position:relative;flex:1 1 280px;max-width:420px}
+  .search input{width:100%;padding:11px 14px 11px 38px;border:1px solid var(--line);border-radius:var(--radius);
+    font-size:14.5px;font-family:inherit;color:var(--ink);background:#fff;outline:none}
+  .search input:focus{border-color:var(--brand-2);box-shadow:0 0 0 3px rgba(27,92,133,.12)}
+  .search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:var(--ink-mute)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;
+    color:var(--ink-soft);cursor:pointer;font-family:inherit}
+  .chip:hover{border-color:var(--brand-2);color:var(--brand)}
+  .chip.on{background:var(--bg-deep);border-color:var(--bg-deep);color:#fff}
+  .count{font-size:13px;color:var(--ink-mute);margin:16px 0 18px}
+
+  /* ---------- product grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:16px}
+  .card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:20px 20px 16px;
+    display:flex;flex-direction:column;transition:box-shadow .18s,border-color .18s,transform .18s}
+  .card:hover{box-shadow:0 10px 26px rgba(13,51,82,.10);border-color:#cdd8e2;transform:translateY(-2px)}
+  .card .mono{width:44px;height:44px;border-radius:6px;background:var(--bg-soft);color:var(--brand);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;letter-spacing:.02em;margin-bottom:14px}
+  .card h3{margin:0;font-size:17px;line-height:1.35;color:var(--ink)}
+  .card .cn{font-size:13px;color:var(--ink-mute);margin:3px 0 12px}
+  .card .facts{display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--ink-soft);
+    border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
+  .card .facts span{display:flex;justify-content:space-between;gap:10px}
+  .card .facts span i{font-style:normal;color:var(--ink-mute)}
+  .card .go{margin-top:14px;font-size:13px;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:6px}
+  .badge{display:inline-block;font-size:11px;letter-spacing:.05em;padding:3px 8px;border-radius:3px;
+    background:var(--accent-soft);color:var(--warn);font-weight:700;margin-bottom:10px}
+
+  /* ---------- detail ---------- */
+  .detail{display:none}
+  .backlink{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-soft);margin:26px 0 10px}
+  .d-head{padding:6px 0 22px;border-bottom:1px solid var(--line-soft)}
+  .d-head h1{font-size:32px;margin:8px 0 6px}
+  .d-head .sub{font-size:14px;color:var(--ink-soft)}
+  .kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:26px 0 8px}
+  .kv div{background:#fff;padding:14px 16px}
+  .kv .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px}
+  .kv .v{font-size:14px;font-weight:650;color:var(--brand);word-break:break-word}
+
+  h2.sec{font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);
+    margin:38px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--bg-deep);display:inline-block}
+  table.spec{width:100%;border-collapse:collapse;font-size:14px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  table.spec thead th{background:var(--bg-soft);text-align:left;padding:11px 14px;font-size:12px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;border-bottom:1px solid var(--line)}
+  table.spec tbody td{padding:11px 14px;border-bottom:1px solid var(--line-soft)}
+  table.spec tbody td:first-child{color:var(--ink-soft);width:46%}
+  table.spec tbody td:last-child{font-weight:600;color:var(--ink)}
+  table.spec tbody tr:last-child td{border-bottom:none}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+  ul.clean{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink-soft)}
+  ul.clean li{margin-bottom:8px}
+  .note-box{border-left:3px solid var(--accent);background:var(--accent-soft);padding:14px 18px;
+    border-radius:4px;font-size:14px;color:#6b4a33;margin-top:14px}
+
+  .docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:6px}
+  .doc{border:1px solid var(--line);border-radius:6px;padding:14px 16px;background:#fff}
+  .doc .t{font-size:13px;font-weight:700;color:var(--brand)}
+  .doc .d{font-size:12.5px;color:var(--ink-mute);margin-top:3px}
+  .doc a{font-size:12.5px;font-weight:700;color:var(--accent);display:inline-block;margin-top:8px}
+
+  .cta-bar{margin-top:40px;background:var(--bg-deep);color:#fff;border-radius:8px;padding:26px 28px;
+    display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .cta-bar p{margin:0;color:#cfdde8;font-size:14.5px;max-width:560px}
+  .cta-bar h4{margin:0 0 6px;font-size:18px;color:#fff}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 18px;border-radius:5px;
+    font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+  .btn:hover{background:#a8480f;text-decoration:none}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+  .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+  /* ---------- simple pages ---------- */
+  .page{display:none}
+  .prose{max-width:820px}
+  .prose h1{font-size:30px;margin:30px 0 10px}
+  .prose p{color:var(--ink-soft);margin:0 0 16px}
+  .prose h3{font-size:16px;margin:24px 0 8px;color:var(--brand)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:24px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:6px}
+  .field input,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:5px;font-family:inherit;font-size:14px}
+  .field textarea{min-height:110px;resize:vertical}
+  .hint{font-size:12.5px;color:var(--ink-mute)}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 0;font-size:12.5px;color:var(--ink-mute);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:760px){
+    h1{font-size:28px} .d-head h1{font-size:24px}
+    .two,.contact-grid{grid-template-columns:1fr}
+    .nav a{padding:7px 9px;font-size:13px}
+    .shell{padding:0 16px 60px}
+  }
+  @media print{
+    .topbar,.cta-bar,.tools,.backlink,footer{display:none!important}
+    .shell{max-width:none;padding:0}
+    body{font-size:12pt}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#/">
+      <span class="mark">PD</span>
+      <span class="txt"><strong>Julistar Chemical</strong><span>Tianjin &middot; Chemical Raw Materials</span></span>
+    </a>
+    <nav class="nav">
+      <a href="#/" data-nav="home">Products</a>
+      <a href="#/documents" data-nav="documents">Documentation</a>
+      <a href="#/contact" data-nav="contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ============ HOME ============ -->
+  <section class="page" id="view-home">
+    <div class="hero">
+      <span class="eyebrow">Product Data Library</span>
+      <h1>Specifications, packing and paperwork —<br>everything a buyer asks before the PO.</h1>
+      <p class="lede">One page per product: technical specification, appearance, packing options, container loading, transport classification and the documents we issue per batch.</p>
+      <div class="meta-row">
+        <span><b id="stat-count">0</b> products</span>
+        <span><b>8</b> categories</span>
+        <span>Data verified against COA &middot; updated 2026</span>
+      </div>
+    </div>
+
+    <div class="tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.47 6.47 0 1 0-.7.7l.27.28v.79l4.25 4.24 1.49-1.49-4.24-4.25zm-6 0a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z"/></svg>
+        <input id="q" type="search" placeholder="Search product, CAS or HS code…" autocomplete="off">
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="count" id="count-line"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- ============ DETAIL ============ -->
+  <section class="detail" id="view-detail"></section>
+
+  <!-- ============ DOCUMENTS ============ -->
+  <section class="page" id="view-documents">
+    <div class="prose">
+      <span class="eyebrow" style="margin-top:34px;display:inline-block">Quality &amp; Paperwork</span>
+      <h1>What ships with every container</h1>
+      <p>Buyers rarely lose money on the price per ton. They lose it on documents that do not match the LC, or on a batch that left the plant with a different available chlorine than the one on the COA. These are the documents we issue, and how to read them.</p>
+
+      <h3>01 &middot; Certificate of Analysis (COA)</h3>
+      <p>Issued per batch, not per year. Each COA carries the batch number, production date, test date, the test method used and the measured value — for calcium hypochlorite the available chlorine figure must come from iodometric titration to GB/T 10666, not from a "purity" claim.</p>
+
+      <h3>02 &middot; Material Safety Data Sheet (MSDS / SDS)</h3>
+      <p>16-section GHS format, in English, matching the UN number and packing group of the grade you buy. If the SDS says UN 2880 and the drum says nothing, stop and ask.</p>
+
+      <h3>03 &middot; Dangerous Goods documents</h3>
+      <p>Dangerous goods declaration, UN packaging certificate (危包证), and the packing certificate for the container. Required for oxidizers and corrosives; missing paperwork at the port costs more than the goods.</p>
+
+      <h3>04 &middot; Commercial documents</h3>
+      <p>Invoice, packing list with net/gross weights per drum, certificate of origin (CCPIT or CIQ), and — when the payment term is a letter of credit — documents prepared exactly to the LC wording, including full set of original bills of lading where the LC asks for 3/3 originals.</p>
+
+      <div class="note-box">Every specification on this site is a typical value taken from routine production. The controlling number is the one on the COA of the batch you receive. Ask for it before you pay, and re-test on arrival.</div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="page" id="view-contact">
+    <div class="prose">
+      <span class="eyebrow" style="margin-top:34px;display:inline-block">Get a Quote</span>
+      <h1>Tell us the product, the volume and the destination port</h1>
+      <p>We reply with specification, packing options, container loading plan and the documents we can issue — usually within one working day.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="field"><label>Company</label><input placeholder="Your company name"></div>
+        <div class="field"><label>Product &amp; grade</label><input placeholder="e.g. Calcium Hypochlorite 70% granular"></div>
+        <div class="field"><label>Quantity / destination</label><input placeholder="e.g. 1 x 20'FCL to Dar es Salaam"></div>
+      </div>
+      <div>
+        <div class="field"><label>Your email</label><input placeholder="name@company.com"></div>
+        <div class="field"><label>Message</label><textarea placeholder="Specification, packing, documents you need…"></textarea></div>
+        <p class="hint">This form is a template — connect it to your mailbox or a form service before publishing (see the setup notes).</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Julistar Chemical &middot; specifications subject to the COA of each batch</span>
+    <span>Replace this footer with your company name, address and registration number.</span>
+  </footer>
+</div>
+
+<script>
+/* =========================================================
+   PRODUCT DATABASE
+   Edit this array to update the site. Every product page is
+   generated from these fields — no other file needs changing.
+   ========================================================= */
+const PRODUCTS = [
+  {
+    id:'caustic-soda', mono:'NaOH', cat:'Alkali',
+    en:'Caustic Soda (pearls/flakes/liquid)', cn:'烧碱（粒碱/片碱/液碱）',
+    cas:'1310-73-2', formula:'NaOH', hs:'2815.11', un:'UN 1823 · Class 8 · PG II',
+    grade:'pearls 99% /flakes 98% /liquid49%',
+    appearance:'White flakes or pearls or Transparent liquid',
+    summary:'Flake and pearl caustic soda for pulp, alumina, water treatment and detergent production. High purity, low carbonate, low iron.',
+    specs:[['NaOH content','≥ 99.0 %'],['Sodium carbonate (Na₂CO₃)','≤ 0.5 %'],['Sodium chloride (NaCl)','≤ 0.05 %'],['Iron (Fe₂O₃)','≤ 0.005 %'],['Particle size','Flake 0.5–2 mm / Pearl 0.5–1.5 mm']],
+    packing:['25 kg PP/PE laminated bag','1000 kg jumbo bag','20\u2032FCL: 25–27 MT (no pallet)'],
+    apps:['Pulp &amp; paper cooking','Alumina refining','Water &amp; wastewater pH adjustment','Soap and detergent','Textile mercerising'],
+    note:'Strongly hygroscopic — keep sealed, store dry. Dissolution is strongly exothermic.'
+  },
+  {
+    id:'koh', mono:'KOH', cat:'Alkali',
+    en:'Potassium Hydroxide', cn:'氢氧化钾',
+    cas:'1310-58-3', formula:'KOH', hs:'2815.20', un:'UN 1813 · Class 8 · PG II',
+    grade:'90% min flakes',
+    appearance:'White flakes',
+    summary:'Flake potassium hydroxide for potassium soaps, electrolytes, cosmetics and gas absorption.',
+    specs:[['KOH content','≥ 90.0 %'],['Potassium carbonate (K₂CO₃)','≤ 0.5 %'],['Potassium chloride (KCl)','≤ 0.02 %'],['Iron (Fe)','≤ 0.001 %'],['Appearance','White flakes, free flowing']],
+    packing:['25 kg PP/PE bag or iron drum','1000 kg jumbo bag','20\u2032FCL: 25 MT (no pallet)'],
+    apps:['Potassium soap / liquid soap','Alkaline battery electrolyte','Cosmetics and personal care','Agrochemical intermediates','CO₂ / H₂S absorption'],
+    note:'Strongly corrosive and hygroscopic. Store away from acids and moisture.'
+  },
+  {
+    id:'sles', mono:'S', cat:'Surfactant',
+    en:'SLES 70%', cn:'脂肪醇聚氧乙烯醚硫酸钠',
+    cas:'68585-34-2', formula:'C₁₂H₂₅(OCH₂CH₂)ₙOSO₃Na', hs:'3402.31', un:'Not classified as dangerous goods',
+    grade:'70% active matter',
+    appearance:'White to light yellow viscous paste',
+    summary:'Anionic surfactant with high foaming and good hard-water tolerance. The backbone of shampoo, shower gel and liquid detergent.',
+    specs:[['Active matter','70 ± 1 %'],['pH (1% aqueous)','7.0 – 9.5'],['Sodium chloride','≤ 2.0 %'],['Unsulfated matter','≤ 1.0 %'],['Colour (5% aq.)','≤ 30 Klett']],
+    packing:['220 kg HDPE drum','1000 kg IBC','20\u2032FCL: 18 MT (drum)'],
+    apps:['Shampoo and shower gel','Liquid laundry detergent','Hand soap','Industrial cleaners','Toothpaste foaming agent'],
+    note:'Viscosity rises in cold weather — keep storage between 15 and 35 °C and stir before use.'
+  },
+  {
+    id:'labsa', mono:'L', cat:'Surfactant',
+    en:'LABSA 96%', cn:'直链烷基苯磺酸',
+    cas:'27176-87-0', formula:'C₁₈H₃₀O₃S', hs:'3402.31', un:'UN 2586 · Class 8 · PG III',
+    grade:'96% active',
+    appearance:'Brown viscous liquid',
+    summary:'Linear alkylbenzene sulfonic acid — the workhorse of powder detergent and dishwashing formulations. Neutralise with NaOH or KOH to make LAS.',
+    specs:[['Active matter','≥ 96 %'],['Free oil','≤ 2.0 %'],['Free sulphuric acid','≤ 1.5 %'],['Water','≤ 1.0 %'],['Appearance','Brown viscous liquid']],
+    packing:['220 kg HDPE drum','1000 L IBC','ISO tank on request'],
+    apps:['Washing powder and LAS','Dishwashing liquid','Industrial degreasers','Concrete admixture','Emulsifier intermediate'],
+    note:'Corrosive acid. Never store next to alkalis, amines or oxidizers.'
+  },
+  {
+    id:'calcium-hypochlorite', mono:'Ca', cat:'Disinfectant',
+    en:'Calcium Hypochlorite 65% / 70%', cn:'次氯酸钙',
+    cas:'7778-54-3', formula:'Ca(OCl)₂', hs:'2828.10', un:'UN 2880 · Class 5.1 (6.1) · PG II',
+    grade:'65% / 70% available chlorine, granular',
+    appearance:'White to off-white granular',
+    summary:'Granular hydrated calcium hypochlorite, sodium process for the 70% grade and calcium process for 65%. Tested to GB/T 10666 by iodometric titration.',
+    specs:[['Available chlorine','≥ 65 % / ≥ 70 %'],['Moisture','5.5 – 10 %'],['Annual chlorine loss','≤ 8 %'],['Granular size (12–28 mesh)','≥ 90 %'],['Water insoluble matter','≤ 0.5 %']],
+    packing:['25 kg pail','45 / 50 kg HDPE drum','1–10 kg jar (pool retail)','20\u2032FCL: 17–20 MT depending on palletisation'],
+    apps:['Swimming pool and spa dosing','Drinking water and municipal supply','Cooling tower and recirculating water','Textile and pulp bleaching','Aquaculture disinfection'],
+    note:'Oxidizer — keep away from acids, ammonia, amines, solvents and organic matter. 70% is a sodium-process grade; calcium process stops around 65%.'
+  },
+  {
+    id:'glutaraldehyde', mono:'GA', cat:'Disinfectant',
+    en:'Glutaraldehyde 50%', cn:'戊二醛',
+    cas:'111-30-8', formula:'C₅H₈O₂', hs:'2912.19', un:'UN 2922 · Class 8 (6.1) · PG II',
+    grade:'50% aqueous solution',
+    appearance:'Colourless to light yellow clear liquid',
+    summary:'Cold sterilant and biocide for medical instruments, oilfield water and leather processing. Supplied as a stabilised 50% aqueous solution.',
+    specs:[['Assay','≥ 50 %'],['pH','3.0 – 5.0'],['Density (20 °C)','≈ 1.06 g/cm³'],['Appearance','Clear, colourless to pale yellow'],['Odour','Pungent, characteristic']],
+    packing:['220 / 230 kg HDPE drum','1000 L IBC','25 kg pail'],
+    apps:['Hospital instrument disinfection','Oilfield and cooling water biocide','Leather tanning','Wood preservation','Electron microscopy fixation'],
+    note:'Pungent and sensitising — handle under ventilation. Colour deepens slightly with storage; assay is what matters.'
+  },
+  {
+    id:'mea-triazine', mono:'T', cat:'Biocide',
+    en:'MEA Triazine 78%', cn:'三嗪类杀菌剂（六氢三嗪衍生物）',
+    cas:'4719-04-4', formula:'C₉H₂₁N₃O₃', hs:'2933.69', un:'UN 3082 · Class 9 · PG III (confirm per SDS)',
+    grade:'78% / 42%',
+    appearance:'Colourless to light yellow clear liquid',
+    summary:'Non-oxidizing biocide and hydrogen sulphide scavenger for oilfield and cooling water systems. Formaldehyde-free on the label, low toxicity to systems.',
+    specs:[['Assay','78 ± 1 % / 42 ± 1 %'],['pH','9.0 – 11.0'],['Density (20 °C)','≈ 1.15 g/cm³'],['Appearance','Clear liquid'],['Water solubility','Fully miscible']],
+    packing:['220 kg HDPE drum','1000 L IBC','20\u2032FCL: 18 MT (drum)'],
+    apps:['H₂S scavenging in oil and gas','Cooling water biofouling control','Metalworking fluid preservation','Sulphate-reducing bacteria control'],
+    note:'Reacts exothermically with acids. Do not store with strong oxidizers. Confirm the UN classification on the current SDS before booking.'
+  },
+  {
+    id:'hydrogen-peroxide', mono:'H₂O₂', cat:'Oxidizer',
+    en:'Hydrogen Peroxide 50%', cn:'双氧水（过氧化氢）',
+    cas:'7722-84-1', formula:'H₂O₂', hs:'2847.00', un:'UN 2014 · Class 5.1 (6.1) · PG II',
+    grade:'50% w/w',
+    appearance:'Colourless clear liquid',
+    summary:'Standard 50% technical grade for bleaching, oxidation and effluent treatment. Stabilised for tropical storage and shipped in vented drums.',
+    specs:[['H₂O₂ content','49.5 – 50.5 %'],['Stability','≥ 97 %'],['Non-volatile residue','≤ 0.02 %'],['Free acid (as H₂SO₄)','≤ 0.03 %'],['Appearance','Colourless, clear']],
+    packing:['30 / 35 kg HDPE drum (vented)','1000 L IBC','ISO tank on request'],
+    apps:['Textile bleaching','Pulp and paper bleaching','Chemical oxidation','Effluent and odour treatment','Electronics etching'],
+    note:'Strong oxidizer — keep out of sunlight, away from heat, metals and organics. Use vented packaging only.'
+  }
+];
+
+const CATS = ['All', ...new Set(PRODUCTS.map(p => p.cat))];
+
+/* ---------------- routing ---------------- */
+const viewHome = document.getElementById('view-home');
+const viewDetail = document.getElementById('view-detail');
+const viewDocs = document.getElementById('view-documents');
+const viewContact = document.getElementById('view-contact');
+let activeCat = 'All';
+
+function route(){
+  const h = location.hash || '#/';
+  const m = h.match(/^#\/p\/(.+)$/);
+  [viewHome, viewDetail, viewDocs, viewContact].forEach(v => v.style.display = 'none');
+  if (m){
+    const p = PRODUCTS.find(x => x.id === m[1]);
+    if (p){ renderDetail(p); viewDetail.style.display = 'block'; setNav('home'); return; }
+  }
+  if (h.startsWith('#/documents')){ viewDocs.style.display = 'block'; setNav('documents'); return; }
+  if (h.startsWith('#/contact')){ viewContact.style.display = 'block'; setNav('contact'); return; }
+  viewHome.style.display = 'block'; setNav('home');
+  renderGrid();
+}
+
+function setNav(k){
+  document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === k));
+}
+
+/* ---------------- grid ---------------- */
+function renderChips(){
+  const box = document.getElementById('chips');
+  box.innerHTML = CATS.map(c =>
+    `<button class="chip${c===activeCat?' on':''}" data-cat="${c}">${c}</button>`).join('');
+  box.querySelectorAll('.chip').forEach(b => b.onclick = () => { activeCat = b.dataset.cat; renderChips(); renderGrid(); });
+}
+
+function renderGrid(){
+  const q = (document.getElementById('q').value || '').trim().toLowerCase();
+  const list = PRODUCTS.filter(p => {
+    const okCat = activeCat === 'All' || p.cat === activeCat;
+    if (!okCat) return false;
+    if (!q) return true;
+    return (p.en + ' ' + p.cn + ' ' + p.cas + ' ' + p.hs + ' ' + p.cat + ' ' + p.grade).toLowerCase().includes(q);
+  });
+  document.getElementById('stat-count').textContent = PRODUCTS.length;
+  document.getElementById('count-line').textContent = `${list.length} of ${PRODUCTS.length} products shown`;
+  document.getElementById('grid').innerHTML = list.map(p => `
+    <a class="card" href="#/p/${p.id}">
+      <span class="badge">${p.cat}</span>
+      <div class="mono">${p.mono}</div>
+      <h3>${p.en}</h3>
+      <span class="cn">${p.cn}</span>
+      <div class="facts">
+        <span><i>Grade</i><b>${p.grade}</b></span>
+        <span><i>CAS</i>${p.cas}</span>
+        <span><i>HS code</i>${p.hs}</span>
+      </div>
+      <span class="go">View data sheet →</span>
+    </a>`).join('') || `<p style="color:var(--ink-mute)">No product matches that search.</p>`;
+}
+
+/* ---------------- detail ---------------- */
+function renderDetail(p){
+  viewDetail.innerHTML = `
+    <a class="backlink" href="#/">← All products</a>
+    <div class="d-head">
+      <span class="badge">${p.cat}</span>
+      <h1>${p.en}</h1>
+      <div class="sub">${p.cn}</div>
+    </div>
+
+    <div class="kv">
+      <div><div class="k">CAS number</div><div class="v">${p.cas}</div></div>
+      <div><div class="k">Formula</div><div class="v">${p.formula}</div></div>
+      <div><div class="k">HS code</div><div class="v">${p.hs}</div></div>
+      <div><div class="k">Transport</div><div class="v">${p.un}</div></div>
+      <div><div class="k">Grade</div><div class="v">${p.grade}</div></div>
+      <div><div class="k">Appearance</div><div class="v">${p.appearance}</div></div>
+    </div>
+
+    <h2 class="sec">Overview</h2>
+    <p style="color:var(--ink-soft);max-width:820px;margin:0">${p.summary}</p>
+
+    <h2 class="sec">Technical specification</h2>
+    <table class="spec">
+      <thead><tr><th>Parameter</th><th>Typical value</th></tr></thead>
+      <tbody>${p.specs.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</tbody>
+    </table>
+
+    <div class="two">
+      <div>
+        <h2 class="sec">Packing options</h2>
+        <ul class="clean">${p.packing.map(x => `<li>${x}</li>`).join('')}</ul>
+      </div>
+      <div>
+        <h2 class="sec">Main applications</h2>
+        <ul class="clean">${p.apps.map(x => `<li>${x}</li>`).join('')}</ul>
+      </div>
+    </div>
+
+    <div class="note-box">${p.note}</div>
+
+    <h2 class="sec">Documents for this product</h2>
+    <div class="docs">
+      <div class="doc"><div class="t">COA — batch</div><div class="d">Test method and measured value</div><a href="#/contact">Request →</a></div>
+      <div class="doc"><div class="t">MSDS / SDS</div><div class="d">16-section GHS, English</div><a href="#/contact">Request →</a></div>
+      <div class="doc"><div class="t">Dangerous goods pack</div><div class="d">UN packaging certificate, DG declaration</div><a href="#/contact">Request →</a></div>
+      <div class="doc"><div class="t">Packing list template</div><div class="d">Net / gross weight per drum</div><a href="#/contact">Request →</a></div>
+    </div>
+
+    <div class="cta-bar">
+      <div>
+        <h4>Need a quotation or the full TDS?</h4>
+        <p>Send the grade, volume and destination port — we reply with specification, loading plan and documents.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#/contact">Ask for a quote</a>
+        <a class="btn ghost" href="javascript:window.print()">Save as PDF</a>
+      </div>
+    </div>
+  `;
+}
+
+/* ---------------- init ---------------- */
+document.getElementById('q').addEventListener('input', renderGrid);
+window.addEventListener('hashchange', route);
+renderChips();
+route();
+</script>
+</body>
+</html>
